@@ -29,6 +29,7 @@ const selectPWABtn = document.getElementById('selectPWA');
 const downloadZipBtn = document.getElementById('downloadZip');
 const copyCodeBtn = document.getElementById('copyCode');
 const resetBtn = document.getElementById('resetBtn');
+const cancelBtn = document.getElementById('cancelBtn');
 const generatedPreviews = document.getElementById('generatedPreviews');
 const codeSnippet = document.getElementById('codeSnippet');
 const htmlCode = document.getElementById('htmlCode');
@@ -58,6 +59,7 @@ function setupEventListeners() {
     downloadZipBtn.addEventListener('click', downloadAsZip);
     copyCodeBtn.addEventListener('click', copyHTMLCode);
     resetBtn.addEventListener('click', resetApp);
+    cancelBtn.addEventListener('click', cancelPreview);
 }
 
 // File handling
@@ -310,6 +312,24 @@ function resetApp() {
     
     // Clear previews
     generatedPreviews.innerHTML = '';
+    
+    // Reset size selections
+    document.querySelectorAll('.size-item').forEach(item => {
+        item.classList.remove('selected');
+        item.querySelector('input').checked = false;
+    });
+    
+    updateGenerateButton();
+}
+
+// Cancel preview and go back to upload
+function cancelPreview() {
+    originalImage = null;
+    selectedSizes.clear();
+    
+    fileInput.value = '';
+    uploadSection.style.display = 'block';
+    previewSection.classList.add('hidden');
     
     // Reset size selections
     document.querySelectorAll('.size-item').forEach(item => {
