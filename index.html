@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Generator - Multi-Format</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Favicon Generator</h1>
+            <p>Generate all favicon formats from a single image</p>
+        </header>
+
+        <!-- Step 1: Upload -->
+        <section class="upload-section" id="uploadSection">
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="fileInput" accept="image/*" hidden>
+                <div class="upload-content">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <h3>Drop your image here</h3>
+                    <p>or click to browse</p>
+                    <span class="supported-formats">PNG, JPG, SVG supported</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: Preview & Generate (hidden initially) -->
+        <section class="preview-section hidden" id="previewSection">
+            <h2>Preview</h2>
+            <div class="original-preview">
+                <img id="originalImage" alt="Original">
+                <p class="image-info" id="imageInfo"></p>
+            </div>
+
+            <h2>Select Sizes to Generate</h2>
+            <div class="size-selector">
+                <button class="preset-btn" id="selectAll">Select All</button>
+                <button class="preset-btn" id="selectPWA">PWA Only</button>
+            </div>
+
+            <div class="sizes-grid" id="sizesGrid">
+                <!-- Will be populated by JS -->
+            </div>
+
+            <button class="generate-btn" id="generateBtn">Generate Favicons</button>
+        </section>
+
+        <!-- Step 3: Download (hidden initially) -->
+        <section class="download-section hidden" id="downloadSection">
+            <h2>Your favicons are ready!</h2>
+            
+            <div class="generated-previews" id="generatedPreviews">
+                <!-- Will be populated by JS -->
+            </div>
+
+            <div class="download-options">
+                <button class="download-btn primary" id="downloadZip">
+                    📦 Download All (ZIP)
+                </button>
+                <button class="download-btn" id="copyCode">
+                    📋 Copy HTML Code
+                </button>
+            </div>
+
+            <div class="code-snippet hidden" id="codeSnippet">
+                <h3>HTML Code:</h3>
+                <pre><code id="htmlCode"></code></pre>
+            </div>
+
+            <button class="reset-btn" id="resetBtn">Start Over</button>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="utils/imageProcessor.js"></script>
+    <script src="utils/zipGenerator.js"></script>
+    <script src="utils/codeGenerator.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
