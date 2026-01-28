@@ -5,16 +5,16 @@
 }
 
 :root {
-    --primary: #06B6D4;          /* Cyan brillante */
-    --primary-dark: #0891B2;     /* Cyan oscuro */
-    --success: #10B981;          /* Verde esmeralda */
-    --warning: #F59E0B;          /* Amarillo */
-    --bg: #0A1929;               /* Azul marino oscuro */
-    --surface: #1A2332;          /* Azul marino */
-    --surface-hover: #243447;    /* Azul grisáceo */
-    --text: #E1F5FE;             /* Blanco azulado */
-    --text-secondary: #90CAF9;   /* Azul claro */
-    --border: #2C3E50;           /* Azul acero */
+    --primary: #06B6D4;          
+    --primary-dark: #0891B2;     
+    --success: #10B981;          
+    --warning: #F59E0B;          
+    --bg: #0A1929;               
+    --surface: #1A2332;          
+    --surface-hover: #243447;    
+    --text: #E1F5FE;             
+    --text-secondary: #90CAF9;   
+    --border: #2C3E50;           
 }
 
 body {
@@ -31,7 +31,6 @@ body {
     padding: 2rem;
 }
 
-/* Header */
 .header {
     text-align: center;
     margin-bottom: 3rem;
@@ -47,7 +46,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Upload Section */
 .upload-section {
     margin-bottom: 3rem;
 }
@@ -96,7 +94,6 @@ body {
     color: var(--text-secondary);
 }
 
-/* Preview Section */
 .preview-section {
     margin-bottom: 3rem;
 }
@@ -125,7 +122,6 @@ body {
     font-size: 0.875rem;
 }
 
-/* Size Selector */
 .size-selector {
     display: flex;
     gap: 1rem;
@@ -148,7 +144,6 @@ body {
     border-color: var(--primary);
 }
 
-/* Sizes Grid */
 .sizes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -193,7 +188,6 @@ body {
     color: var(--text-secondary);
 }
 
-/* Generate Button */
 .generate-btn {
     width: 100%;
     padding: 1rem 2rem;
@@ -237,7 +231,6 @@ body {
     transform: translateY(0);
 }
 
-/* Download Section */
 .download-section h2 {
     text-align: center;
     margin-bottom: 2rem;
@@ -272,7 +265,6 @@ body {
     color: var(--text-secondary);
 }
 
-/* Download Options */
 .download-options {
     display: flex;
     gap: 1rem;
@@ -310,7 +302,6 @@ body {
     background: var(--surface-hover);
 }
 
-/* Code Snippet */
 .code-snippet {
     background: var(--surface);
     border-radius: 1rem;
@@ -335,7 +326,7 @@ body {
     font-size: 0.875rem;
 }
 
-/* Reset Button */
+
 .reset-btn {
     width: 100%;
     padding: 0.75rem;
@@ -352,12 +343,12 @@ body {
     color: var(--text);
 }
 
-/* Utility Classes */
+
 .hidden {
     display: none;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .container {
         padding: 1rem;

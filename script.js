@@ -1,8 +1,7 @@
-// Global state
+
 let originalImage = null;
 let selectedSizes = new Set();
 
-// Size configurations
 const SIZES = [
     { size: 16, label: '16×16', description: 'Browser tab', recommended: true },
     { size: 32, label: '32×32', description: 'Taskbar', recommended: true },
@@ -14,7 +13,6 @@ const SIZES = [
     { size: 512, label: '512×512', description: 'PWA', recommended: true }
 ];
 
-// DOM Elements
 const uploadArea = document.getElementById('uploadArea');
 const fileInput = document.getElementById('fileInput');
 const uploadSection = document.getElementById('uploadSection');
@@ -34,7 +32,6 @@ const generatedPreviews = document.getElementById('generatedPreviews');
 const codeSnippet = document.getElementById('codeSnippet');
 const htmlCode = document.getElementById('htmlCode');
 
-// Initialize
 init();
 
 function init() {
@@ -43,16 +40,14 @@ function init() {
 }
 
 function setupEventListeners() {
-    // Upload area events
+
     uploadArea.addEventListener('click', () => fileInput.click());
     fileInput.addEventListener('change', handleFileSelect);
     
-    // Drag and drop
     uploadArea.addEventListener('dragover', handleDragOver);
     uploadArea.addEventListener('dragleave', handleDragLeave);
     uploadArea.addEventListener('drop', handleDrop);
     
-    // Buttons
     generateBtn.addEventListener('click', generateFavicons);
     selectAllBtn.addEventListener('click', selectAllSizes);
     selectPWABtn.addEventListener('click', selectPWASizes);
@@ -62,7 +57,6 @@ function setupEventListeners() {
     cancelBtn.addEventListener('click', cancelPreview);
 }
 
-// File handling
 function handleFileSelect(e) {
     const file = e.target.files[0];
     if (file && file.type.startsWith('image/')) {
@@ -112,7 +106,6 @@ function displayOriginalImage(img, file) {
     const sizeKB = (file.size / 1024).toFixed(2);
     imageInfo.textContent = `${img.width} × ${img.height} pixels • ${sizeKB} KB`;
     
-    // Auto-select recommended sizes
     selectRecommendedSizes();
 }
 
@@ -121,7 +114,6 @@ function showPreviewSection() {
     previewSection.classList.remove('hidden');
 }
 
-// Render sizes grid
 function renderSizesGrid() {
     sizesGrid.innerHTML = '';
     
@@ -179,14 +171,12 @@ function selectAllSizes() {
 }
 
 function selectPWASizes() {
-    // Clear all first
     selectedSizes.clear();
     document.querySelectorAll('.size-item').forEach(item => {
         item.classList.remove('selected');
         item.querySelector('input').checked = false;
     });
     
-    // Select PWA sizes: 192, 512, and Apple 180
     const pwaConfig = [180, 192, 512];
     pwaConfig.forEach(size => {
         const checkbox = document.getElementById(`size-${size}`);
@@ -206,17 +196,14 @@ function updateGenerateButton() {
         : 'Select at least one size';
 }
 
-// Generate favicons
 async function generateFavicons() {
     if (!originalImage || selectedSizes.size === 0) return;
     
     generateBtn.textContent = 'Generating...';
     generateBtn.disabled = true;
     
-    // Clear previous previews
     generatedPreviews.innerHTML = '';
     
-    // Generate each size
     const generatedImages = [];
     
     for (const size of selectedSizes) {
@@ -231,17 +218,13 @@ async function generateFavicons() {
             filename: `favicon-${size}x${size}.png`
         });
         
-        // Add to preview
         addPreviewItem(url, size);
     }
     
-    // Store generated images globally for download
     window.generatedFavicons = generatedImages;
     
-    // Show download section
     showDownloadSection();
     
-    // Generate HTML code
     generateHTMLCode();
     
     generateBtn.textContent = '✓ Generated!';
@@ -266,7 +249,6 @@ function showDownloadSection() {
     downloadSection.classList.remove('hidden');
 }
 
-// Download as ZIP
 async function downloadAsZip() {
     if (!window.generatedFavicons) return;
     
@@ -279,7 +261,6 @@ async function downloadAsZip() {
     downloadZipBtn.disabled = false;
 }
 
-// Copy HTML code
 function copyHTMLCode() {
     const code = htmlCode.textContent;
     
@@ -298,7 +279,6 @@ function generateHTMLCode() {
     htmlCode.textContent = code;
 }
 
-// Reset app
 function resetApp() {
     originalImage = null;
     selectedSizes.clear();
@@ -310,10 +290,8 @@ function resetApp() {
     downloadSection.classList.add('hidden');
     codeSnippet.classList.add('hidden');
     
-    // Clear previews
     generatedPreviews.innerHTML = '';
     
-    // Reset size selections
     document.querySelectorAll('.size-item').forEach(item => {
         item.classList.remove('selected');
         item.querySelector('input').checked = false;
@@ -322,7 +300,6 @@ function resetApp() {
     updateGenerateButton();
 }
 
-// Cancel preview and go back to upload
 function cancelPreview() {
     originalImage = null;
     selectedSizes.clear();
@@ -331,7 +308,6 @@ function cancelPreview() {
     uploadSection.style.display = 'block';
     previewSection.classList.add('hidden');
     
-    // Reset size selections
     document.querySelectorAll('.size-item').forEach(item => {
         item.classList.remove('selected');
         item.querySelector('input').checked = false;
@@ -340,7 +316,6 @@ function cancelPreview() {
     updateGenerateButton();
 }
 
-// Utility function to convert canvas to blob
 function canvasToBlob(canvas) {
     return new Promise(resolve => {
         canvas.toBlob(blob => resolve(blob), 'image/png');
