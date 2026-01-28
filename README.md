@@ -1,94 +1,67 @@
 # Favicon Generator Multi-Format
 
-Generate all favicon formats you need from a single image. No backend required - everything runs in your browser.
+Generate all the favicon formats you need from a single image — and everything runs in the browser.
 
+This tool was built to simplify generating favicon sets for projects without having to juggle multiple generators or tools.
 
 ## Features
 
-- Upload any image - PNG, JPG, or SVG
-- Generate multiple sizes - From 16×16 to 512×512
-- Instant generation - All processing happens in your browser
-- Download as ZIP - Get all favicons in one package
-- Copy HTML code - Ready-to-use code snippets
-- Preview in context - See how your favicon looks
-- PWA support - Includes manifest.json generation
+- Upload any image — PNG, JPG, or SVG
+- Generate multiple sizes, from 16×16 up to 512×512
+- Instant generation — all processing happens in your browser
+- Download a ZIP with all icons and supporting files
+- Copy ready-to-use HTML code
+- Preview how your favicon looks before downloading
 
 ## Quick Start
 
 1. Upload your image (drag & drop or click to browse)
-2. Select sizes (or use presets: All, PWA)
-3. Generate favicons
-4. Download ZIP or copy HTML code
+2. Select the sizes you want (or choose presets like “All” or “PWA”)
+3. Click **Generate**
+4. Download the ZIP or copy the HTML snippet
 5. Done!
 
-## What you get
+## What You Get
 
-When you generate favicons, you'll receive:
+When you generate favicons, you’ll receive:
 
-- `favicon-16x16.png` - Browser tab icon
-- `favicon-32x32.png` - Taskbar icon
-- `favicon-48x48.png` - Windows site icon
-- `favicon-180x180.png` - Apple Touch icon
-- `favicon-192x192.png` - Android Chrome
-- `favicon-512x512.png` - PWA high-res
-- HTML code snippet
-- README with instructions
+- `favicon-16x16.png` — Browser tab icon  
+- `favicon-32x32.png` — Taskbar icon  
+- `favicon-48x48.png` — Windows site icon  
+- `favicon-180x180.png` — Apple touch icon  
+- `favicon-192x192.png` — Android Chrome icon  
+- `favicon-512x512.png` — High-res PWA splash  
+- HTML code snippet for your `<head>`
 
-## Built with
+## 🛠 Built With
 
-- Vanilla JavaScript - No frameworks, just pure JS
-- Canvas API - For image processing
-- JSZip - For creating downloadable ZIP files
-- CSS3 - Modern styling with CSS Grid and Flexbox
+- Vanilla JavaScript – no frameworks, pure JS
+- Canvas API – for image processing
+- JSZip – to create downloadable ZIP files
+- CSS3 – modern styling
 
-## Tips for best results
+## Tips for Best Results
 
 - Use square images (1:1 aspect ratio)
-- Minimum 512×512 pixels recommended
-- Simple designs work better at small sizes (16×16)
-- Test your favicon in both light and dark modes
-- Avoid fine details that won't be visible when scaled down
+- A minimum of 512×512 pixels is recommended
+- Simple designs work better at smaller sizes (e.g., 16×16)
+- Test your favicon in both light and dark browser themes
 
-## Features breakdown
+## Known Limitations
 
-### Size Options
-
-| Size | Purpose | Platform |
-|------|---------|----------|
-| 16×16 | Browser tab | Most browsers |
-| 32×32 | Taskbar, bookmarks | Windows |
-| 48×48 | Site icons | Windows |
-| 64×64 | High DPI displays | Modern browsers |
-| 128×128 | Chrome Web Store | Chrome |
-| 180×180 | Home screen icon | iOS Safari |
-| 192×192 | Home screen icon | Android |
-| 512×512 | Splash screen | PWA |
-
-### Presets
-
-- Select All: Generates all 8 sizes
-- PWA Only: Generates sizes needed for Progressive Web Apps (180, 192, 512)
-
-## Browser Support
-
-Works on all modern browsers:
-
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
+- Very small source images might look blurry in 16×16
+- Some complex SVG graphics may render slightly differently across browsers
 
 ## Contributing
 
-This is a learning project, but suggestions and improvements are welcome!
+This is a learning project, and suggestions or improvements are welcome! Feel free to open an issue.
 
 ## License
 
-MIT License - feel free to use, modify, and learn from this project.
+MIT License — feel free to use, modify, and learn from this project.
 
-## Author
+## 👩‍💻 Author
 
-Silvana Rodriguez  
-Software Developer & UI/UX Designer
+Created by **Silvana Rodriguez**  
+Software Developer & Product Designer (UI/UX)
 
-- GitHub: [@silvvrodriguez](https://github.com/silvvrodriguez)
