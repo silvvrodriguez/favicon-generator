@@ -33,7 +33,7 @@ When you generate favicons, you’ll receive:
 - `favicon-512x512.png` — High-res PWA splash  
 - HTML code snippet for your `<head>`
 
-## 🛠 Built With
+## Built With
 
 - Vanilla JavaScript – no frameworks, pure JS
 - Canvas API – for image processing
