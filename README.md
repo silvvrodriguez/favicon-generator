@@ -4,7 +4,7 @@ Generate all the favicon formats you need from a single image — everything run
 
 This tool was built to make favicon generation easier when working on small to medium projects, without relying on multiple external tools.
 
-## [View Live Demo](https://silvvrodriguez.github.io/favicon-generator/) 
+## [Live Demo](https://silvvrodriguez.github.io/favicon-generator/) 
 
 ## Features
 
