@@ -4,6 +4,8 @@ Generate all the favicon formats you need from a single image — everything run
 
 This tool was built to make favicon generation easier when working on small to medium projects, without relying on multiple external tools.
 
+## [Live Demo](https://silvvrodriguez.github.io/favicon-generator/) 
+
 ## Features
 
 - Upload PNG, JPG, or SVG images
@@ -56,11 +58,13 @@ The generated output may include:
 
 This is a personal learning project. Suggestions and improvements are welcome — feel free to open an issue.
 
+## About
+
+Created by **Silvana Rodriguez**  
+Software Developer & Product Designer (UI/UX)
+
+
 ## License
 
 MIT License
 
-## Author
-
-**Silvana Rodriguez**  
-Software Developer & Product Designer (UI/UX)
