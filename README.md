@@ -60,7 +60,7 @@ This is a learning project, and suggestions or improvements are welcome! Feel fr
 
 MIT License — feel free to use, modify, and learn from this project.
 
-## 👩‍💻 Author
+## Author
 
 Created by **Silvana Rodriguez**  
 Software Developer & Product Designer (UI/UX)
